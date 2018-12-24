@@ -1,0 +1,38 @@
+#jumbotron {
+
+    color: purple;
+    padding: 20px;
+}
+
+body {
+    font-family: 'Times New Roman';
+    font-size: 22pt;
+    text-align: center;
+    margin: auto;
+    }
+    
+.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+    
+#nemo {
+    color: orangered;
+}
+
+#cinderella {
+    color: hotpink;
+}
+
+#jungle {
+    color: seagreen;
+}
+
+#pups {
+    color: brown;
+}
+
+#mickey {
+    color: blue;
+}
+    

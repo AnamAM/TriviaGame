@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Trivia Game!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Users/Anam/Desktop/AnamAM.github.io/TriviaGame/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/Users/Anam/Desktop/AnamAM.github.io/TriviaGame/javascript/app.js"></script>
+
+<style>
+body {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROI1GGHVNvWYHNDsVYVP67xp2MLYiLCszH8oDtR6fHL-C6cbLIIQ");
+    width: 100%;
+}
+</style>
+</head>
+
+<body>
+    <div id="jumbotron">
+        <h1><strong>Totally Trivial Trivia!</strong></h1>
+    </div>
+    <br>
+
+    <button id="start">START THE GAME</button>
+    <div id="count-down"></div>
+
+    <div id="questionsContainer">
+
+        <form id="questions-display" name="question-form" onsubmit="return submitAnswers()">
+            <br>
+
+            <div id="nemo">
+                <h3>In the movie Finding Nemo, which country has Nemo been taken to?</h3>
+                <input type="radio" name="question1" value="a" id="question1a"> Asia
+                <input type="radio" name="question1" value="b" id="question1b"> Australia
+                <input type="radio" name="question1" value="c" id="question1c"> Afria
+                <input type="radio" name="question1" value="d" id="question1d"> South America
+            </div>
+
+            <br>
+
+            <div id="cinderella">
+                <h3>What does Cinderella's fairy godmother turn into a carriage?</h3>
+                <input type="radio" name="question2" value="a" id="question2a"> Pumpkin
+                <input type="radio" name="question2" value="b" id="question2b"> Onion
+                <input type="radio" name="question2" value="c" id="question2c"> Peach
+                <input type="radio" name="question2" value="d" id="question2d"> Apple
+            </div>
+
+            <br>
+
+            <div id="jungle">
+                <h3>In The Jungle Book, who teaches Mowgli 'The Bare Necesseties of Life'?</h3>
+                <input type="radio" name="question3" value="a" id="question3a"> Bagheera
+                <input type="radio" name="question3" value="b" id="question3b"> Akele
+                <input type="radio" name="question3" value="c" id="question3c"> Baloo
+                <input type="radio" name="question3" value="d" id="question3d"> Kaa
+            </div>
+                
+            <br>
+
+            <div id="pups">
+                <h3>Cruella de Vil is the villain in which Disney movie?</h3>
+                <input type="radio" name="question4" value="a" id="question4a"> Dumbo
+                <input type="radio" name="question4" value="b" id="question4b"> 101 Dalmations
+                <input type="radio" name="question4" value="c" id="question4c"> Aladdin
+                <input type="radio" name="question4" value="d" id="question4d"> Peter Pan
+            </div>
+            
+            <br>
+
+            <div id="mickey">
+                <h3>What color are Mickey Mouse's shorts?</h3>
+                <input type="radio" name="question5" value="a" id="question5a"> Green
+                <input type="radio" name="question5" value="b" id="question5b"> Yellow
+                <input type="radio" name="question5" value="c" id="question5c"> Blue
+                <input type="radio" name="question5" value="d" id="question5d"> Red
+            </div>
+        </form>
+
+        <br>
+        <input type="submit" id="submit-button" value="DONE">
+
+    </div>
+    <div id="results"></div>
+    
+</body>
+
+</html>
