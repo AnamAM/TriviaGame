@@ -3,18 +3,22 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <title>Trivia Game!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/Users/Anam/Desktop/AnamAM.github.io/TriviaGame/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="/Users/Anam/Desktop/AnamAM.github.io/TriviaGame/javascript/app.js"></script>
 
 <style>
+
 body {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROI1GGHVNvWYHNDsVYVP67xp2MLYiLCszH8oDtR6fHL-C6cbLIIQ");
-    width: 100%;
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROI1GGHVNvWYHNDsVYVP67xp2MLYiLCszH8oDtR6fHL-C6cbLIIQ");
+width: 100%;
 }
 #jumbotron {
 
@@ -98,7 +102,7 @@ color: blue;
                 <input type="radio" name="question3" value="c" id="question3c"> Baloo
                 <input type="radio" name="question3" value="d" id="question3d"> Kaa
             </div>
-                
+
             <br>
 
             <div id="pups">
@@ -108,7 +112,7 @@ color: blue;
                 <input type="radio" name="question4" value="c" id="question4c"> Aladdin
                 <input type="radio" name="question4" value="d" id="question4d"> Peter Pan
             </div>
-            
+
             <br>
 
             <div id="mickey">
@@ -128,118 +132,118 @@ color: blue;
 
 
     <script type="text/javascript">
-    
-    $(document).ready(function(){
 
-var correct = 0;
+        $(document).ready(function () {
 
-$("#questions-display").hide();
-$("#submit-button").hide();
+            var correct = 0;
 
-function submitAnswers(){
+            $("#questions-display").hide();
+            $("#submit-button").hide();
 
-
-var question1 = document.forms["question-form"]["question1"].value;
-var question2 = document.forms["question-form"]["question2"].value;
-var question3 = document.forms["question-form"]["question3"].value;
-var question4 = document.forms["question-form"]["question4"].value;
-var question5 = document.forms["question-form"]["question5"].value;
-
-var correctAnswer = ["b", "a", "c", "b", "d"];
+            function submitAnswers() {
 
 
-if ( question1 == correctAnswer[0]){
-correct++;
-}
-if ( question2 == correctAnswer[1]){
-correct++;
-}
-if ( question3 == correctAnswer[2]){
-correct++;
-}
-if ( question4 == correctAnswer[3]){
-correct++;
-}
-if ( question5 == correctAnswer[4]){
-correct++;
+                var question1 = document.forms["question-form"]["question1"].value;
+                var question2 = document.forms["question-form"]["question2"].value;
+                var question3 = document.forms["question-form"]["question3"].value;
+                var question4 = document.forms["question-form"]["question4"].value;
+                var question5 = document.forms["question-form"]["question5"].value;
 
-} 
-
-}
+                var correctAnswer = ["b", "a", "c", "b", "d"];
 
 
+                if (question1 == correctAnswer[0]) {
+                    correct++;
+                }
+                if (question2 == correctAnswer[1]) {
+                    correct++;
+                }
+                if (question3 == correctAnswer[2]) {
+                    correct++;
+                }
+                if (question4 == correctAnswer[3]) {
+                    correct++;
+                }
+                if (question5 == correctAnswer[4]) {
+                    correct++;
+
+                }
+
+            }
 
 
 
 
-var seconds = 30;
-var intervalId;
-
-  function runTimer() {
-    clearInterval(intervalId);
-    intervalId = setInterval(decrement, 1000);
-   
-  }
 
 
-  function decrement() {
-    seconds--;
-    $("#count-down").html("<h2>" + seconds + " seconds left </h2>");
-    if (seconds === 0) {
-      $("#questions-display").hide();
-      $("#submit-button").hide();
-      stop();
-      submitAnswers();
-      displayResults();
-    }
-  }
+            var seconds = 30;
+            var intervalId;
+
+            function runTimer() {
+                clearInterval(intervalId);
+                intervalId = setInterval(decrement, 1000);
+
+            }
 
 
-$("#start").on("click", start);  
-
-function start(){
-
-$("#questions-display").show();
-$("#submit-button").show();
-runTimer();
-
-document.getElementById("questions-display").reset();
-}
-
-
-  function stop() {
-    clearInterval(intervalId);
-    $("#questions-display").hide();
-    $("#submit-button").hide();
-
-  }    
+            function decrement() {
+                seconds--;
+                $("#count-down").html("<h2>" + seconds + " seconds left </h2>");
+                if (seconds === 0) {
+                    $("#questions-display").hide();
+                    $("#submit-button").hide();
+                    stop();
+                    submitAnswers();
+                    displayResults();
+                }
+            }
 
 
-$("#submit-button").on("click", submit);  
+            $("#start").on("click", start);
 
-function submit(){
+            function start() {
 
-$("#questions-display").hide();
-$("#submit-button").hide();
-submitAnswers();
-displayResults();
-stop();
-}
+                $("#questions-display").show();
+                $("#submit-button").show();
+                runTimer();
 
-
-function displayResults(){
-$("#results").text("You answered " + correct + " questions correctly out of 5.");
-}
+                document.getElementById("questions-display").reset();
+            }
 
 
-function reset(){
-var correct = 0;
-$("#questions-display").hide();
-$("#submit-button").hide();
-$("#results").hide();
-}
+            function stop() {
+                clearInterval(intervalId);
+                $("#questions-display").hide();
+                $("#submit-button").hide();
 
-});
+            }
+
+
+            $("#submit-button").on("click", submit);
+
+            function submit() {
+
+                $("#questions-display").hide();
+                $("#submit-button").hide();
+                submitAnswers();
+                displayResults();
+                stop();
+            }
+
+
+            function displayResults() {
+                $("#results").text("You answered " + correct + " questions correctly out of 5.");
+            }
+
+
+            function reset() {
+                var correct = 0;
+                $("#questions-display").hide();
+                $("#submit-button").hide();
+                $("#results").hide();
+            }
+
+        });
 
     </script>
 </body>
